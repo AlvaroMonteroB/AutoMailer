@@ -6,13 +6,11 @@ const app = express();
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
-    secure: process.env.SMTP_PORT == 465, // true para 465, false para otros
+    service:"gmail",
     auth: {
         user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-    }
+        pass: process.env.SMTP_PASS,
+    },
 });
 
 app.post('/send-email', async (req, res) => {
