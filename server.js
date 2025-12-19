@@ -18,7 +18,7 @@ app.post('/send-email', async (req, res) => {
 
     try {
         await transporter.sendMail({
-            from: `"Servidor Node" <${process.env.SMTP_USER}>`,
+            from: `"Servidor" <${process.env.SMTP_USER}>`,
             to,
             subject,
             text,
