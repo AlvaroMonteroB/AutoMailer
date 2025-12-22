@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 
 app.post('/send-email', async (req, res) => {
     const { to, subject, text, html } = req.body;
-
+    console.log("email recibido")
     try {
         await transporter.sendMail({
             from: `"Servidor" <${process.env.SMTP_USER}>`,
